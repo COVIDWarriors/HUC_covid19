@@ -1,0 +1,187 @@
+</<!DOCTYPE html>
+<link rel="stylesheet" href="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/convert.css" />
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Setup</title>
+</head>
+
+<body>
+<div>
+    <div style="width: 40%; float:left">
+
+        <h2>
+          Run: $run_id
+          <br>Operator: $technician
+          <br>Date: $dia
+          <br>Time: $hora
+          <br>Protocol type: Pathogen
+        </h2>
+
+    </div>
+      <!-- tabla summary -->
+      <div style="width: 60%; float:right">
+          <table class="tg">
+            <h2>
+              summary
+            </h2>
+            <thead>
+              <tr>
+                <th class="tg-1oa0">Number of samples</th>
+                <th class="tg-1oa0">Corrected number of samples</th>
+                <th class="tg-1oa0">Number of columns in use</th>
+                <th class="tg-1oa0">Volumen necesario Master Mix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-4t01">$num_samples</td>
+                <td class="tg-4t01">$num_s_corrected</td>
+                <td class="tg-4t01">$num_cols</td>
+                <td class="tg-4t01">$MMIX µl</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+</div>
+
+<div style="width: 100%; float:left">
+      <div style="width: 40%; float:left">
+        <h3>
+          Deck distribution for station A
+        </h3>
+        <p><em>
+            Please, dispose deck as below
+          </em></p>
+        <img src="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/station-a.jpg" width="500"  />
+      </div>
+      <div style="width: 60%; float:right">
+        <h3>
+          Process workflow
+        </h3>
+        <p><em>
+            Please, follow the process:
+          </em></p>
+        <img src="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/process_pathogen.jpg" width="500"  />
+      </div>
+
+</div>
+
+<div style="width: 100%; float:left">
+      <div style="width: 40%; float:left">
+          <h3>
+            Deck disposition for station B
+          </h3>
+          <p><em>
+              Please, prepare the deck as below.
+            </em></p>
+            <img src="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/station-bp.jpg" width="500" />
+          <img src="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/station-bp.jpg" width="500" />
+      </div>
+      <div style="width: 60%; float:right">
+        <h3>
+          Reactive distribution in slot 5 for mini well with IC
+        </h3>
+        <p><em>
+            Please, fill the mini well rack as shown below.
+          </em></p>
+        <img src="img_mmwell" width="500" />
+      </div>
+</div>
+
+<div style="width: 100%; float:left">
+      <div style="width: 40%; float:left">
+        <h3>
+          Reactive distribution in slot 4 for well R
+        </h3>
+        <p><em>
+            Please, fill the R well rack as shown below.
+          </em></p>
+        <img src="img_src_R" width="500" />
+      </div>
+      <div style="width: 60%; float:right">
+        <h3>
+          Reactive distribution in slot 2 for well IC
+        </h3>
+        <p><em>
+            Please, fill the R well rack as shown below.
+          </em></p>
+        <img src="img_src_IC" width="500" />
+      </div>
+</div>
+
+<div style="width: 100%; float:left">
+  <div>
+    <h3>
+      Deck disposition for station C
+    </h3>
+    <p><em>
+        Please, prepare the deck as below.
+      </em></p>
+    <img src="file:///C:/Users/opentrons/Documents/GitHub/covid19huc/Automation/station-c.jpg" width="400" height="300" />
+  </div>
+  <p><em>
+      <br>
+      <br>
+      Opentrons equipment setup for SARS-CoV-2 detection with Kingfisher extraction. Hospital Universitario Cruces Bilbao
+    </em></p>
+</div>
+
+
+</body>
+
+
+</html>
+
+
+<!--
+<table style="width:40%">
+ <tr>
+   <th>W1</th>
+   <th>W2</th>
+   <th>Lysis</th>
+   <th>-</th>
+   <th>-</th>
+   <th>-</th>
+   <th>-</th>
+   <th>-</th>
+   <th>-</th>
+   <th>Elution</th>
+   <th>IC</th>
+   <th>Beads</th>
+ </tr>
+ <tr>
+   <td>6000</td>
+   <td>6000</td>
+   <td>6000</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>6000</td>
+   <td>6000</td>
+   <td>6000</td>
+ </tr>
+</table>
+
+
+
+
+
+**PATHOGEN well R**
+<div>
+
+</div>
+<img src="/Users/covid19warriors/Documents/covid19huc/Automation/KF_Pathogen_R.jpg" width="400" height="300" />
+
+**PATHOGEN well IC**
+<div>
+
+</div>
+<img src="/Users/covid19warriors/Documents/covid19huc/Automation/KF_Pathogen_IC.jpg" width="400" height="300" />
+
+pandoc /Users/covid19warriors/Documents/covid19huc/Automation/volumes.md -f markdown -t html -s -o /Users/covid19warriors/Documents/covid19huc/Automation/volumes.html --css /Users/covid19warriors/Documents/covid19huc/Automation/convert.css
+-->
