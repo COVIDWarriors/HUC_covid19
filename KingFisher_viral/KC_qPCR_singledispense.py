@@ -24,7 +24,7 @@ metadata = {
 '''
 #Defined variables
 ##################
-NUM_SAMPLES = 94
+NUM_SAMPLES = 16
 NUM_SAMPLES = NUM_SAMPLES + 2 # MMIX for PC and NC
 
 air_gap_vol = 20
@@ -37,7 +37,7 @@ size_transfer = 4  # Number of wells the distribute function will fill. Deprecat
 volume_sample = 5  # Volume of the sample
 volume_pc = 20
 volume_nc = 20
-volume_mmix_available = 50*20 #(NUM_SAMPLES * 1.5 * volume_mmix)  # Total volume of first screwcap
+#volume_mmix_available = 50*20 #(NUM_SAMPLES * 1.5 * volume_mmix)  # Total volume of first screwcap
 extra_dispensal = 10  # Extra volume for master mix in each distribute transfer
 diameter_screwcap = 8.5  # Diameter of the screwcap
 temperature = 8  # Temperature of temp module
@@ -70,7 +70,7 @@ for mmix_type in MMIX_recipe.keys():
     for needed_vol in MMIX_recipe[mmix_type]:
         MMIX_make[mmix_type].append(needed_vol * NUM_SAMPLES * 1.1)
 
-volume_mmix_available = (NUM_SAMPLES * 1.1 * MMIX_vol[mmix_selection][0])  # Total volume of mastermix that will be prepared
+volume_mmix_available = ((NUM_SAMPLES + 5) * MMIX_vol[mmix_selection][0])  # Total volume of mastermix that will be prepared
 
 #############################################
 # Calculated variables
@@ -136,7 +136,7 @@ def run(ctx: protocol_api.ProtocolContext):
                       rinse = False,
                       flow_rate_aspirate = 2,
                       flow_rate_dispense = 4,
-                      reagent_reservoir_volume = 2010, # volume_mmix_available,
+                      reagent_reservoir_volume = volume_mmix_available,
                       num_wells = 1, #change with num samples
                       delay = 0,
                       h_cono = h_cone,

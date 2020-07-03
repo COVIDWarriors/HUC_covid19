@@ -21,21 +21,27 @@ demo_mode=True
 
 # recipes for protocol types [obj. volume per well, allowable remaining nonusable volume in channel]
 viral_recipe={'Beads':[20,3],
-'Wone':[100,600],
+'Wone':[100,800],
 'Wtwo':[100,600],
 'IC':[10,3],
 'Elution':[50,900],
 'Lysis':[100,600],
-'MMIX':[20,30]
+'MMIX':[20,30],
+'Taqpath':[6.25,0],
+'Assay':[1.25,0],
+'Water':[12.5,0]
 }
 
 pathogen_recipe={'Beads':[260,600],
-'Wone':[300,600],
+'Wone':[300,800],
 'Wtwo':[450,600],
 'IC':[10,3],
 'Elution':[90,600],
 'Lysis':[260,600],
-'MMIX':[20,30]
+'MMIX':[20,30],
+'Taqpath':[6.25,0],
+'Assay':[1.25,0],
+'Water':[12.5,0]
 }
 
 recipes={'V': viral_recipe, 'P': pathogen_recipe}
@@ -79,6 +85,9 @@ def generate_recipe(mode,cn_samp,recipes,num_samples):
             vol_pocillo=recipes[mode][key][0]*(num_samples+2+3)+recipes[mode][key][1]
             num_cells=1
             final_recipe.update({key: [vol_pocillo,num_cells]})
+            final_recipe.update({'Taqpath': [vol_pocillo/float(recipes[mode]['Taqpath'][0]),num_cells]})
+            final_recipe.update({'Assay': [vol_pocillo/float(recipes[mode]['Assay'][0]),num_cells]})
+            final_recipe.update({'Water': [vol_pocillo/float(recipes[mode]['Water'][0]),num_cells]})
         elif key in ['IC']:
             vol_total=math.ceil((recipes[mode][key][0]*cn_samp)/5)*5
             num_cells=1
